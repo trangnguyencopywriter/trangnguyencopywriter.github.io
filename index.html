@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trang Nguyen | Email Copywriter</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink: #111111;
+  --ink-mid: #444444;
+  --ink-light: #888888;
+  --cream: #faf8f4;
+  --white: #ffffff;
+  --accent: #b85c2c;
+  --accent-light: #f0e6de;
+  --rule: #e0dbd3;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.1rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(250,248,244,0.95); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-name { font-size: 1rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links a { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { padding: 0.5rem 1.2rem; background: var(--ink) !important; color: var(--cream) !important; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--accent) !important; color: var(--cream) !important; }
+
+.btn { display: inline-block; padding: 0.85rem 2rem; background: var(--ink); color: var(--cream); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; }
+.btn:hover { background: var(--accent); transform: translateY(-1px); }
+.btn-light { background: var(--white); color: var(--ink); }
+.btn-light:hover { background: var(--accent-light); color: var(--ink); }
+
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 3rem 5rem; max-width: 1100px; margin: 0 auto; }
+.hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center; width: 100%; }
+.hero-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; font-weight: 500; }
+.hero-title { font-size: clamp(1.2rem, 2vw, 1.8rem); line-height: 1.2; margin-bottom: 1.8rem; letter-spacing: -0.02em; }
+.hero-title .t1 { display: block; color: var(--ink); font-weight: 600; font-size: 1em; }
+.hero-title .t2 { display: block; color: var(--ink); font-weight: 600; font-size: 1em; margin-top: 0.15em; }
+.hero-title .t3 { display: inline-block; color: var(--accent); font-weight: 500; font-size: 0.52em; margin-top: 1rem; letter-spacing: 0.04em; font-style: normal; line-height: 1; background: var(--accent-light); padding: 0.5em 1em; border-left: 3px solid var(--accent); }
+.hero-sub { font-size: 0.93rem; line-height: 1.85; color: var(--ink-mid); margin-bottom: 2rem; }
+.hero-right { display: flex; flex-direction: column; gap: 0.8rem; }
+.info-card { padding: 1.4rem 1.6rem; background: var(--white); border-left: 3px solid var(--accent); }
+.info-label { font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 0.25rem; font-weight: 500; }
+.info-value { font-size: 0.9rem; color: var(--ink); line-height: 1.5; }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 5rem 3rem; }
+.section-label { font-size: 0.67rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; font-weight: 500; }
+.section-title { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 600; line-height: 1.25; letter-spacing: -0.02em; }
+.section-title em { font-style: italic; font-weight: 300; color: var(--accent); }
+.divider { max-width: 1100px; margin: 0 auto; padding: 0 3rem; border-top: 1px solid var(--rule); }
+
+.pain-section { background: var(--ink); padding: 5rem 0; }
+.pain-inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+.pain-tabs { display: flex; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 3rem; }
+.pain-tab { padding: 0.75rem 1.8rem; font-size: 0.77rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(250,248,244,0.5); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; font-weight: 500; }
+.pain-tab.active { color: var(--cream); border-bottom-color: var(--accent); }
+.pain-tab:hover { color: rgba(250,248,244,0.65); }
+.pain-content { display: none; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.pain-content.active { display: grid; }
+.pain-body { font-size: 0.9rem; line-height: 1.95; color: rgba(250,248,244,0.72); }
+.pain-body p { margin-bottom: 1.1rem; }
+.pain-body p:last-child { margin-bottom: 0; }
+.pain-body strong { color: var(--cream); font-weight: 500; }
+.process { padding-top: 0.2rem; }
+.process-item { display: flex; gap: 1.2rem; margin-bottom: 1.5rem; align-items: flex-start; }
+.process-num { font-size: 0.73rem; font-weight: 600; color: var(--accent); flex-shrink: 0; padding-top: 0.22rem; letter-spacing: 0.04em; }
+.process-text { font-size: 0.87rem; line-height: 1.75; color: rgba(250,248,244,0.72); }
+.process-text strong { display: block; color: var(--cream); font-size: 0.9rem; margin-bottom: 0.15rem; font-weight: 500; }
+.offer-note { margin-top: 1.8rem; padding: 1.3rem 1.5rem; border: 1px solid rgba(184,92,44,0.35); font-size: 0.84rem; line-height: 1.8; color: rgba(250,248,244,0.65); }
+.offer-note strong { color: var(--cream); font-weight: 500; }
+.pain-cta { margin-top: 3.5rem; text-align: center; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; }
+.about-title { font-size: clamp(1.35rem, 2.2vw, 1.75rem); font-weight: 600; line-height: 1.3; letter-spacing: -0.02em; margin-top: 0.6rem; }
+.about-title em { font-style: italic; font-weight: 300; color: var(--accent); }
+.about-body { font-size: 0.92rem; line-height: 1.95; color: var(--ink-mid); }
+.about-body p { margin-bottom: 1rem; }
+.about-body p:last-child { margin-bottom: 0; }
+
+.spec-note { font-size: 0.83rem; line-height: 1.8; color: var(--ink-light); font-style: italic; margin-bottom: 2.5rem; padding: 1.2rem 1.6rem; border-left: 3px solid var(--rule); background: var(--white); }
+.work-index { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 4.5rem; }
+.work-card { background: var(--white); padding: 2rem 1.6rem; text-decoration: none; color: inherit; display: block; transition: background 0.2s; }
+.work-card:hover { background: var(--accent-light); }
+.work-card-num { font-size: 1.5rem; font-weight: 300; color: var(--rule); margin-bottom: 0.7rem; }
+.work-card-type { font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; font-weight: 500; }
+.work-card-title { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.3; }
+.work-card-brand { font-size: 0.77rem; color: var(--ink-light); }
+
+.sample { margin-bottom: 6rem; padding-top: 2rem; border-top: 2px solid var(--ink); }
+.sample-header { display: grid; grid-template-columns: 1fr 2fr; gap: 3.5rem; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--rule); }
+.sample-tag { display: inline-block; padding: 0.25rem 0.7rem; background: var(--accent); color: white; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.7rem; font-weight: 500; }
+.sample-title { font-size: 1.28rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.35rem; letter-spacing: -0.01em; }
+.sample-brand { font-size: 0.77rem; color: var(--ink-light); }
+.sample-strategy { font-size: 0.87rem; line-height: 1.85; color: var(--ink-mid); }
+.strategy-item { margin-bottom: 1rem; }
+.strategy-item strong { display: block; font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.25rem; font-weight: 600; }
+
+.email-sequence { display: flex; flex-direction: column; gap: 0.8rem; }
+.email-block { background: var(--white); border: 1px solid var(--rule); overflow: hidden; }
+.email-block-header { padding: 1rem 1.5rem; background: var(--ink); color: var(--cream); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+.email-block-num { font-size: 0.59rem; letter-spacing: 0.13em; text-transform: uppercase; opacity: 0.38; margin-bottom: 0.12rem; }
+.email-block-title { font-size: 0.88rem; font-weight: 400; }
+.email-block-toggle { font-size: 1.2rem; opacity: 0.28; transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
+.email-block.open .email-block-toggle { transform: rotate(45deg); opacity: 0.65; }
+.email-body { display: none; padding: 1.6rem 1.5rem; }
+.email-block.open .email-body { display: block; }
+.email-meta-row { display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 1rem; margin-bottom: 1.3rem; padding-bottom: 1.3rem; border-bottom: 1px solid var(--rule); align-items: start; }
+.email-meta-label { font-size: 0.59rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); padding-top: 0.12rem; white-space: nowrap; font-weight: 500; }
+.email-meta-value { font-size: 0.85rem; color: var(--ink-mid); }
+.email-content { font-size: 0.87rem; line-height: 1.92; color: var(--ink-mid); white-space: pre-wrap; }
+.email-content strong { color: var(--ink); font-weight: 600; }
+.email-content em { font-style: italic; }
+.cta-btn { display: inline-block; margin: 0.2rem 0; padding: 0.35rem 0.9rem; background: var(--accent-light); color: var(--accent); font-size: 0.74rem; font-style: normal; border-radius: 2px; }
+
+.contact-section { background: var(--ink); color: var(--cream); padding: 6rem 3rem; text-align: center; }
+.contact-label { font-size: 0.67rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,230,222,0.42); margin-bottom: 0.8rem; font-weight: 500; }
+.contact-title { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.contact-sub { font-size: 0.9rem; color: rgba(250,248,244,0.48); margin-bottom: 2.2rem; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.9; }
+
+footer { padding: 1.5rem 3rem; border-top: 1px solid #1d1d1d; background: var(--ink); display: flex; justify-content: space-between; align-items: center; }
+footer p { font-size: 0.73rem; color: rgba(250,248,244,0.18); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.73rem; color: rgba(250,248,244,0.32); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(250,248,244,0.65); }
+
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links li:not(:last-child) { display: none; }
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .pain-inner { padding: 0 1.5rem; }
+  .pain-content.active { display: flex; flex-direction: column; gap: 2.5rem; }
+  .section { padding: 4rem 1.5rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .work-index { grid-template-columns: 1fr; }
+  .sample-header { grid-template-columns: 1fr; gap: 1.6rem; }
+  .contact-section { padding: 4rem 1.5rem; }
+  footer { padding: 1.4rem 1.5rem; flex-direction: column; gap: 0.8rem; text-align: center; }
+}
+
+/* OTHER COPY SECTION */
+.other-section { background: var(--white); padding: 5rem 0; }
+.other-inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+.other-intro { max-width: 680px; margin-bottom: 4rem; }
+.other-intro p { font-size: 0.95rem; line-height: 1.85; color: var(--ink-mid); margin-top: 0.8rem; }
+.other-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 4rem; }
+.other-card { background: var(--cream); padding: 2.5rem 2rem; }
+.other-card-type { font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; font-weight: 500; }
+.other-card-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.3; letter-spacing: -0.01em; }
+.other-card-brand { font-size: 0.78rem; color: var(--ink-light); margin-bottom: 1rem; }
+.other-card-strategy { font-size: 0.84rem; line-height: 1.8; color: var(--ink-mid); }
+.other-card-strategy strong { display: block; font-size: 0.61rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.25rem; font-weight: 600; margin-top: 0.8rem; }
+.other-sample { margin-bottom: 5rem; padding-top: 2rem; border-top: 2px solid var(--ink); }
+.other-sample-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 2fr; gap: 3.5rem; }
+@media (max-width: 768px) {
+  .other-inner { padding: 0 1.5rem; }
+  .other-grid { grid-template-columns: 1fr; }
+  .other-sample-header { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+.work-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 3rem; }
+.work-nav-item { background: var(--white); padding: 1.8rem 2rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.3rem; transition: background 0.2s; border-bottom: 3px solid transparent; }
+.work-nav-item:hover { background: var(--accent-light); }
+.work-nav-item.active-nav { border-bottom-color: var(--accent); }
+.work-nav-label { font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+.work-nav-title { font-size: 1rem; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+.work-nav-desc { font-size: 0.8rem; color: var(--ink-light); }
+.work-part-title { font-size: 1rem; font-weight: 600; color: var(--ink-light); letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.72rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--rule); }
+@media (max-width: 768px) { .work-nav { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div style="display:flex;flex-direction:column;gap:0.2rem;">
+    <a href="#" class="nav-name">Trang Nguyen</a>
+    <a href="https://www.linkedin.com/in/trang-nguyen-b8735135/" target="_blank" style="display:inline-flex;align-items:center;gap:0.3rem;opacity:0.45;transition:opacity 0.2s;text-decoration:none;color:var(--ink-mid);" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span style="font-size:0.65rem;letter-spacing:0.06em;">LinkedIn</span></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="https://calendly.com/trangnguyen-cpw/30min" target="_blank" class="nav-cta">Book a call</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="fade-in">
+      <p class="hero-label">Email Copywriter</p>
+      <h1 class="hero-title">
+        <span class="t1">Words that move people to act.</span>
+        <span class="t2">Emails that convert readers into buyers.</span>
+        <span class="t3">I'm Trang, and I write both.</span>
+      </h1>
+      <p class="hero-sub">I write email copy for e-commerce brands, coaches, course creators, and agencies: research-first, on brief, delivered on time, and written to convert.</p>
+      <a href="https://calendly.com/trangnguyen-cpw/30min" target="_blank" class="btn">Book a call</a>
+    </div>
+    <div class="hero-right fade-in">
+      <div class="info-card">
+        <p class="info-label">Focus</p>
+        <p class="info-value">Email marketing copy across the full customer journey: welcome sequences, nurture sequences, cart abandonment, re-engagement, and more</p>
+      </div>
+      <div class="info-card">
+        <p class="info-label">Works with</p>
+        <p class="info-value">E-commerce brands, coaches, course creators, and agencies</p>
+      </div>
+      <div class="info-card">
+        <p class="info-label">Available for</p>
+        <p class="info-value">Freelance projects and agency collaborations</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pain-section">
+  <div class="pain-inner">
+    <div class="pain-tabs">
+      <div class="pain-tab active" onclick="switchTab(this,'agencies')">For Agencies</div>
+      <div class="pain-tab" onclick="switchTab(this,'coaches')">For Coaches &amp; Course Creators</div>
+      <div class="pain-tab" onclick="switchTab(this,'ecommerce')">For E-commerce Brands</div>
+    </div>
+
+    <div class="pain-content active" id="tab-agencies">
+      <div class="pain-body fade-in">
+        <p>You've been there. You send a brief. You wait. When the copy finally shows up, it's generic, off-brand, and needs a full rewrite. Now you're the one fixing it at midnight while your client is waiting for results.</p>
+        <p>I take briefs seriously. I study the brand voice and the audience before writing a single word. I ask what I need to know upfront and deliver on time. <strong>Clean, usable copy that fits your client's voice</strong>, without the back-and-forth.</p>
+        <p>Want to test it? Start with a small project. If the copy doesn't work for you, you don't pay.</p>
+      </div>
+      <div class="process fade-in">
+        <p style="font-size:0.67rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,248,244,0.65);font-weight:600;margin-bottom:1.5rem;">How I work</p>
+        <div class="process-item">
+          <span class="process-num">01</span>
+          <div class="process-text">
+            <strong>You send me a brief.</strong>
+            I ask what I need to know upfront. No endless back-and-forth that eats up your week.
+          </div>
+        </div>
+        <div class="process-item">
+          <span class="process-num">02</span>
+          <div class="process-text">
+            <strong>I research, then write.</strong>
+            I study the brand, the audience, and the offer before touching the copy. That's what makes it usable.
+          </div>
+        </div>
+        <div class="process-item">
+          <span class="process-num">03</span>
+          <div class="process-text">
+            <strong>You get it on time.</strong>
+            On-brand copy your client can actually use, delivered when you need it.
+          </div>
+        </div>
+        <div class="offer-note">
+          Want to see how we work together? <strong>Start with one small project.</strong> If the copy doesn't hit the mark, you&nbsp;don't&nbsp;pay.
+        </div>
+      </div>
+    </div>
+
+    <div class="pain-content" id="tab-coaches">
+      <div class="pain-body fade-in">
+        <p>Social media gets the attention. But attention doesn't pay the bills.</p>
+        <p>Your email list is different. It's the one place your audience chose to hear from you directly, no algorithm deciding who sees what, no platform that can pull the rug out from under you overnight. It's yours.</p>
+        <p>And when it's written well, it does something social rarely does: it <strong>builds real trust over time</strong>, keeps your audience close between launches, and turns people who've been following you for months into buyers who were ready the moment you made the offer.</p>
+        <p>That's what good email copy does. Not just one sequence, but a consistent presence in someone's inbox that makes them feel understood, not sold to.</p>
+        <p>I write sequences that sound like you at your best: clear, genuine, and focused on what your reader actually needs to hear, with results that show up in your numbers.</p>
+      </div>
+      <div class="process fade-in">
+        <p style="font-size:0.67rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,248,244,0.65);font-weight:600;margin-bottom:1.5rem;">How I work</p>
+        <div class="process-item">
+          <span class="process-num">01</span>
+          <div class="process-text">
+            <strong>I learn your world.</strong>
+            Your audience, your offer, your voice. I ask the right questions before writing anything.
+          </div>
+        </div>
+        <div class="process-item">
+          <span class="process-num">02</span>
+          <div class="process-text">
+            <strong>I write to your reader.</strong>
+            Copy that meets them where they are and guides them naturally toward your offer.
+          </div>
+        </div>
+        <div class="process-item">
+          <span class="process-num">03</span>
+          <div class="process-text">
+            <strong>You get emails that work.</strong>
+            Ready to send, on brand, built around a clear strategy, and written to convert.
+          </div>
+        </div>
+        <div class="offer-note">
+          Want to test the waters? <strong>Start with one sequence.</strong> If it doesn't work for you, you&nbsp;don't&nbsp;pay.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="pain-content" id="tab-ecommerce">
+      <div class="pain-body fade-in">
+        <p>You're driving traffic. But traffic doesn't pay the bills, conversions do.</p>
+        <p>Every abandoned cart, every product launch, every promotional email is a chance to turn a browser into a buyer. The difference between copy that converts and copy that gets ignored usually comes down to one thing: understanding what the customer is actually thinking at that moment.</p>
+        <p>I write e-commerce email sequences that meet the reader where they are, whether they just discovered your brand, left something in their cart, or need one more reason to say yes.</p>
+        <p>Want to test it? Start with one sequence. If the copy doesn't work for you, you don't&nbsp;pay.</p>
+      </div>
+      <div class="process fade-in">
+        <p style="font-size:0.67rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,248,244,0.65);font-weight:600;margin-bottom:1.5rem;">How I work</p>
+        <div class="process-item">
+          <span class="process-num">01</span>
+          <div class="process-text">
+            <strong>I study your customer journey.</strong>
+            Where they come from, what they're thinking at each stage, and what's stopping them from buying.
+          </div>
+        </div>
+        <div class="process-item">
+          <span class="process-num">02</span>
+          <div class="process-text">
+            <strong>I write to the moment.</strong>
+            Cart abandonment, welcome flows, product launches: each email is written for exactly where the reader is right now.
+          </div>
+        </div>
+        <div class="process-item">
+          <span class="process-num">03</span>
+          <div class="process-text">
+            <strong>You get copy built to convert.</strong>
+            On brand, on time, and focused on moving people from interest to purchase.
+          </div>
+        </div>
+        <div class="offer-note">
+          Want to test the waters? <strong>Start with one sequence.</strong> If it doesn't work for you, you&nbsp;don't&nbsp;pay.
+        </div>
+      </div>
+    </div>
+    <div class="pain-cta fade-in">
+      <a href="https://calendly.com/trangnguyen-cpw/30min" target="_blank" class="btn btn-light">Book a call</a>
+    </div>
+  </div>
+</div>
+
+<div class="section fade-in" id="about">
+  <div class="about-grid">
+    <div>
+      <p class="section-label">About</p>
+      <h2 class="about-title">Copy that gets <em>clients real results.</em></h2>
+    </div>
+    <div class="about-body">
+      <div style="display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+        <div>
+          <p>I'm Trang, an email copywriter based in Hanoi, Vietnam.</p>
+          <p>Most emails go out and do nothing. I write the ones that don't.</p>
+          <p>Before this, I spent over a decade as a legal consultant, learning how to find the strongest argument within real constraints, not just the argument I wished I could make. Then I stepped away to raise my children, and spent years studying early childhood education and how parents understand what their children actually need to hear. It taught me something that applies directly to copy: start with the person, not the message.</p>
+          <p>Both show up in every email I write.</p>
+          <p>Now I write email sequences across the full customer journey, welcome flows, nurture sequences, launch campaigns, re-engagement, for e-commerce brands, coaches, course creators, and agencies in English and Vietnamese.</p>
+          <p>If your emails are going out but not converting the way they should, that's usually a thinking problem before it's a writing problem. That's where I start.</p>
+        </div>
+        <div style="flex-shrink:0;">
+          <img src="avatar.jpg" alt="Trang Nguyen" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="width:110px;height:110px;border-radius:50%;object-fit:cover;display:block;" />
+          <div style="display:none;width:110px;height:110px;border-radius:50%;background:var(--accent-light);border:2px dashed var(--rule);align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b85c2c" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span style="font-size:0.62rem;color:var(--accent);font-weight:500;text-align:center;line-height:1.3;">Upload<br>avatar.jpg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="work">
+  <p class="section-label">Selected Work</p>
+  <h2 class="section-title" style="margin-bottom:1.5rem;">Portfolio</h2>
+  <div class="work-nav fade-in">
+    <a href="#email-samples" class="work-nav-item active-nav">
+      <span class="work-nav-label">Part 01</span>
+      <span class="work-nav-title">Email Copy Samples</span>
+      <span class="work-nav-desc">Welcome, nurture, cart abandonment sequences</span>
+    </a>
+    <a href="#other-copy" class="work-nav-item">
+      <span class="work-nav-label">Part 02</span>
+      <span class="work-nav-title">Beyond Email</span>
+      <span class="work-nav-desc">Landing pages, Facebook ads, UGC scripts</span>
+    </a>
+  </div>
+  <h3 class="work-part-title fade-in" id="email-samples">Part 01: Email Copy Samples</h3>
+  <p class="spec-note">These samples were written independently using real brands as context, approaching each brief as if I were the brand copywriter: studying the offer, audience, and positioning before writing a single line. They are not client projects. The research process, strategic thinking, and copy decisions behind each piece reflect how I would approach a real brief.</p>
+
+  <div class="work-index">
+    <a href="#sample-1" class="work-card">
+      <p class="work-card-num">01</p>
+      <p class="work-card-type">Coaching · Nurture</p>
+      <p class="work-card-title">2-Email Nurture Sequence</p>
+      <p class="work-card-brand">NursePreneurs</p>
+    </a>
+    <a href="#sample-2" class="work-card">
+      <p class="work-card-num">02</p>
+      <p class="work-card-type">Coaching · Welcome</p>
+      <p class="work-card-title">5-Email Welcome Sequence</p>
+      <p class="work-card-brand">The Sales Training Academy</p>
+    </a>
+    <a href="#sample-3" class="work-card">
+      <p class="work-card-num">03</p>
+      <p class="work-card-type">E-commerce · Recovery</p>
+      <p class="work-card-title">3-Email Cart Abandonment Sequence</p>
+      <p class="work-card-brand">Brake Free</p>
+    </a>
+  </div>
+
+  <div class="sample fade-in" id="sample-1">
+    <div class="sample-header">
+      <div>
+        <span class="sample-tag">Coaching · Nurture</span>
+        <h3 class="sample-title">Coaching Nurture Sequence</h3>
+        <p class="sample-brand">NursePreneurs</p>
+      </div>
+      <div class="sample-strategy">
+        <div class="strategy-item">
+          <strong>Brand &amp; Audience</strong>
+          NursePreneurs coaches nurses who want to leave shift work and build their own practice. The audience has spent years thinking about starting a business, bought courses, but still feels stuck and unsupported.
+        </div>
+        <div class="strategy-item">
+          <strong>Strategy</strong>
+          This audience had already failed with courses, so any hint of a pitch too early would kill trust instantly. Email 1 names the exact frustration they cannot articulate (the WHAT vs HOW gap). Email 2 lets a real client story do the selling. The offer only appears after the reader has already thought "that sounds like me", so it feels like a logical next step, not a push.
+        </div>
+      </div>
+    </div>
+    <div class="email-sequence">
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 01</p><p class="email-block-title">Problem Validation, Why Courses Fail</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject</span><span class="email-meta-value">Courses teach WHAT to do. Not HOW to actually do it</span>
+            <span class="email-meta-label">Preview</span><span class="email-meta-value">That's why you're stuck with a notebook full of ideas and zero clients...</span>
+          </div>
+          <div class="email-content">You've been thinking about starting your nurse business for more than 3 years.
+
+You've bought 2, maybe 3 courses. You've joined Facebook groups and mapped out ideas on napkins.
+
+But you're still here, working 60-80 hours while getting paid for 40. You're still missing family time and you're still stuck.
+
+And at some point, you start wondering: What's wrong with me?
+
+<strong>Nothing is wrong with you.</strong>
+
+I know because I've talked to hundreds of nurses exactly like you. They're smart, capable people with years of expertise.
+
+The problem wasn't them. It was what they were trying to use.
+
+<strong>The WHAT vs HOW gap</strong>
+
+Those courses you bought taught you WHAT to do.
+
+They told you to build a website, create an offer, find your niche, and set your prices. You learned all of it.
+
+But when you sat down to actually do it, you froze.
+
+Because knowing WHAT to do isn't the same as knowing HOW to do it.
+
+It's like reading a recipe versus actually cooking the meal. Or watching a surgery versus performing it yourself.
+
+That's the gap. That's why you're sitting there with a notebook full of ideas and zero clients.
+
+When I ask nurses why their courses didn't work, I hear the same thing over and over:
+
+<em>"The information was great. But when I sat down to actually start, I didn't know where to begin." - Nurse entrepreneur, 6 years in ICU</em>
+
+<em>"I got stuck and had no one to ask." - Travel nurse, 12 years experience</em>
+
+<em>"Week 3, life got busy, and I just stopped." - NICU nurse, 8 years in</em>
+
+Does that sound familiar?
+
+Information doesn't create transformation. You don't have a knowledge problem. You have an implementation problem. And you can't implement it alone.
+
+That's what courses don't give you.
+
+Tomorrow I'm telling you about Lori, a DNP with all the credentials and knowledge, but she was stuck working night shifts that were draining her. Then she tried something different.
+
+Talk soon,
+Catie
+
+P.S. It wasn't her fault. And it's not yours.</div>
+        </div>
+      </div>
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 02</p><p class="email-block-title">Case Study and Offer Introduction</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject</span><span class="email-meta-value">How Lori quit her night shift job without another course</span>
+            <span class="email-meta-label">Preview</span><span class="email-meta-value">It wasn't more information. It was something else entirely</span>
+          </div>
+          <div class="email-content">Lori Kerley is a DNP.
+
+She had the credentials. She had the knowledge. She'd bought online courses and joined the Facebook groups.
+
+Still working night shifts that were destroying her. Starting to think: <em>"Maybe I'm just not cut out for this."</em>
+
+Then she tried something different.
+
+Not long after, she gave up that night shift job. Now she has clients coming in consistently. She recouped her investment in just a few months.
+
+<em>"I feel completely confident about where I'm going."</em>
+
+<strong>Here's what changed.</strong>
+
+Lori didn't suddenly get smarter. She didn't work harder.
+
+She changed one thing: she stopped doing it alone.
+
+She found something built specifically for nurses who were stuck exactly where she was, something that combined the three things that actually work, but only when they work together.
+
+Curriculum. Coaching. Community.
+
+Most programs give you one or two. This gave Lori all three, working together at the same time.
+
+<em>"My business has allowed me to do so much. Just this year I was able to take my two kids to Disney World." - Meredith</em>
+
+<em>"Not only did she help me leave shift work, but she opened me up to a possibility I wasn't even considering, my own business." - Aimee</em>
+
+They all stopped trying to figure it out alone. Just like Lori did.
+
+That something Lori found? It's called IMPACT.
+
+<span class="cta-btn">See exactly how IMPACT works [LINK]</span>
+
+Catie Harris, PhD, MBA, RN</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sample fade-in" id="sample-2">
+    <div class="sample-header">
+      <div>
+        <span class="sample-tag">Coaching · Welcome</span>
+        <h3 class="sample-title">5-Email Welcome Sequence</h3>
+        <p class="sample-brand">The Sales Training Academy</p>
+      </div>
+      <div class="sample-strategy">
+        <div class="strategy-item">
+          <strong>Brand &amp; Audience</strong>
+          The Sales Training Academy coaches business owners and service providers who find selling awkward or unnatural. They want structure and confidence, not scripts that make them feel fake.
+        </div>
+        <div class="strategy-item">
+          <strong>Strategy</strong>
+          The core challenge was delivering real value immediately while building toward a paid offer, without the sequence feeling like a funnel. Gilly's voice stays front and center: direct, warm, grounded in 30+ years of real experience. Practical tips come first, trust builds email by email, and by email 5 the offer arrives as a natural conclusion rather than a pitch.
+        </div>
+      </div>
+    </div>
+    <div class="email-sequence">
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 01</p><p class="email-block-title">Welcome, Lead Magnet Delivery and Expectation Setting</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject A</span><span class="email-meta-value">Your Follow-up Playbook is here, [NAME]</span>
+            <span class="email-meta-label">Subject B</span><span class="email-meta-value">Grab Your Playbook, [NAME]</span>
+            <span class="email-meta-label">Subject C</span><span class="email-meta-value">Your playbook is ready</span>
+          </div>
+          <div class="email-content">Hey [Name],
+
+Gilly here!
+
+First things first, you made a smart move grabbing that playbook. Welcome to The Sales Training Academy.
+
+Here's your Free Playbook, <strong>"How to Follow Up Your Leads Without Feeling Like A Stalker":</strong>
+
+<span class="cta-btn">DOWNLOAD YOUR PLAYBOOK HERE</span>
+
+Quick favour before you go? Hit reply and let me know you got this, just a "got it" works. I want to make sure my emails are landing in your inbox, not disappearing into spam.
+
+<strong>Now you're in, here's the deal:</strong>
+
+You'll hear from me 1-2 times a week. I'll share sales tips, scripts you can steal, and stories from my 30+ years doing this, including the embarrassing ones.
+
+Got questions? Just reply. I read everything.
+
+And yes, sometimes I'll tell you about my courses and programmes. If that's not your jam, skip those and just enjoy the free stuff. The unsubscribe link is always there, no drama.
+
+But if you're sick of dreading every sales conversation?
+
+Stick around. I've got you.
+
+Talk soon,
+Gilly x
+
+P.S. Add hello@thesalestrainingacademy.com to your contacts so you don't miss what's coming. Tomorrow's email is a good one.</div>
+        </div>
+      </div>
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 02</p><p class="email-block-title">Question-Led Audience Engagement</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject A</span><span class="email-meta-value">Quick question for you</span>
+            <span class="email-meta-label">Subject B</span><span class="email-meta-value">What's your biggest struggle?</span>
+            <span class="email-meta-label">Subject C</span><span class="email-meta-value">Can I ask you something?</span>
+          </div>
+          <div class="email-content">Hey [Name],
+
+Gilly here.
+
+Got a question for you and I really want to hear your answer.
+
+<strong>What's your biggest struggle with sales right now?</strong>
+
+Just hit reply and tell me. A sentence or two is perfect.
+
+Why am I asking? Because I'd rather send you stuff that's actually useful, not random tips you don't care about.
+
+And who knows? What you share might just show up in a future email.
+
+I really do read every reply.
+
+So, what's getting in your way?
+
+Gilly x</div>
+        </div>
+      </div>
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 03</p><p class="email-block-title">Practical Objection-Handling Tips</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject A</span><span class="email-meta-value">"Let me check my diary and get back to you"</span>
+            <span class="email-meta-label">Subject B</span><span class="email-meta-value">They say no to a meeting. Now what?</span>
+            <span class="email-meta-label">Subject C</span><span class="email-meta-value">What to say when they won't book?</span>
+          </div>
+          <div class="email-content">Hey [Name],
+
+Gilly here.
+
+Remember BAMFAM from the Playbook? Book A Meeting From A Meeting.
+
+Simple idea. But then you try it and hear:
+
+"Let me check my diary and get back to you."
+"Just send me an email."
+"I'm slammed next week."
+
+And suddenly you're back to chasing. Ugh.
+
+When they say <strong>"Let me check my diary and get back to you"</strong>:
+<em>"No worries, why don't we pencil something in now and if it doesn't work, we can move it? How's Tuesday or Wednesday looking?"</em>
+
+When they say <strong>"Just send me an email"</strong>:
+<em>"Happy to. But these things get buried in inboxes. Easier to lock in 15 minutes now. What works better, mornings or afternoons?"</em>
+
+When they say <strong>"I'm really busy next week"</strong>:
+<em>"Totally get it. How about the week after? I could do [day] or [day], would either work?"</em>
+
+See the pattern? You're not pushing. You're just making it easy for them to say yes.
+
+Try one of these next time and see what happens.
+
+Gilly x</div>
+        </div>
+      </div>
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 04</p><p class="email-block-title">Practical Guidance on Follow-up Boundaries</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject A</span><span class="email-meta-value">When to stop following up</span>
+            <span class="email-meta-label">Subject B</span><span class="email-meta-value">Sometimes you have to let go</span>
+            <span class="email-meta-label">Subject C</span><span class="email-meta-value">The email that ends the chase</span>
+          </div>
+          <div class="email-content">Hey [Name],
+
+Gilly here.
+
+We've talked about following up more. But there's another side to this.
+
+Sometimes you have to stop.
+
+Not every lead is going to buy. Some conversations just don't turn into clients. And at some point, chasing becomes a waste of your energy.
+
+My rule: after 5 or 6 follow-ups with no response, it's time.
+
+But don't just disappear. Send one last email. Something like:
+
+<em>"Hey [Name], I've reached out a few times and haven't heard back, so I'm guessing now isn't the right time. No worries at all. If things change, you know where to find me."</em>
+
+Short and respectful. No guilt trips.
+
+Funny thing is, this email often gets a reply when nothing else did. People respect it when you give them space.
+
+And if they don't reply? You move on knowing you did everything right.
+
+Gilly x
+
+P.S. I share a lot on social media too, stuff that doesn't always make it into emails. Instagram @saleswithgilly · Facebook: The Sales Training Academy</div>
+        </div>
+      </div>
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 05</p><p class="email-block-title">Soft Offer Transition</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject A</span><span class="email-meta-value">Still feeling stuck?</span>
+            <span class="email-meta-label">Subject B</span><span class="email-meta-value">If sales still feel hard</span>
+            <span class="email-meta-label">Subject C</span><span class="email-meta-value">Can I be honest with you?</span>
+          </div>
+          <div class="email-content">Hey [Name],
+
+Gilly here.
+
+I want to tell you something most people in this space won't say.
+
+I've sent you tips, templates, scripts you can steal. And I hope they've helped.
+
+But if you're still feeling stuck, still getting that knot in your stomach before a sales call, still not sure what to say or when to say it...
+
+Tips alone won't fix that.
+
+I know because I've been there. Reading every book, saving every tip I could find. And still feeling lost.
+
+What changed for me was learning a proper structure. Not just random tips, a proper process that actually made sense.
+
+That's why I created Sales Simplified.
+
+It's everything I know about selling, broken down into 8 modules you can work through at your own pace.
+
+If you're tired of figuring it out on your own:
+
+<span class="cta-btn">SALES SIMPLIFIED [LINK]</span>
+
+And if now's not the right time? No worries. I'll still be here, sending you tips.
+
+Gilly x</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sample fade-in" id="sample-3">
+    <div class="sample-header">
+      <div>
+        <span class="sample-tag">E-commerce · Recovery</span>
+        <h3 class="sample-title">Cart Abandonment Sequence</h3>
+        <p class="sample-brand">Brake Free</p>
+      </div>
+      <div class="sample-strategy">
+        <div class="strategy-item">
+          <strong>Brand &amp; Audience</strong>
+          Brake Free makes a wireless helmet-mounted brake light for motorcyclists. The audience showed purchase intent but didn't complete checkout, likely held back by hesitation around fit, shipping, or overall value.
+        </div>
+        <div class="strategy-item">
+          <strong>Strategy</strong>
+          Most cart abandonment emails lead with the discount. I didn't. For motorcycle riders, road visibility isn't a feature, it's tied to a real fear of being unseen. Leading with that emotion first makes the $20 off feel like a bonus rather than the reason to buy. Each email removes a specific layer of hesitation: email 1 reframes the product as protection, email 2 handles logistics with urgency, email 3 answers the technical questions that stop cautious buyers.
+        </div>
+      </div>
+    </div>
+    <div class="email-sequence">
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 01</p><p class="email-block-title">Safety Reminder and Cart Recovery Offer</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject A</span><span class="email-meta-value">You left safety in your cart</span>
+            <span class="email-meta-label">Subject B</span><span class="email-meta-value">Your Brake Free is waiting, Plus $20 Off Inside</span>
+            <span class="email-meta-label">Subject C</span><span class="email-meta-value">Don't Ride Without This (Your Cart Misses You)</span>
+            <span class="email-meta-label">Preview</span><span class="email-meta-value">That moment of visibility could matter more than you think.</span>
+          </div>
+          <div class="email-content"><strong>You Almost Rode Without Being Seen</strong>
+Being seen when you brake isn't optional. It's protection.
+
+<span class="cta-btn">Return to Cart, Get 20% Off</span>
+
+You were one step away from adding an extra layer of protection to every ride.
+
+Brake Free is a high-mounted, wireless brake light designed to solve a simple but dangerous problem:
+
+<strong>Drivers don't see you braking.</strong>
+
+Mounted high on your helmet, it lights up when you slow down, putting your brake signal directly in a driver's line of sight, where it actually gets noticed.
+
+As one rider put it:
+
+<em>"I didn't realize how invisible I was until I wasn't anymore."</em>
+
+One quick note on shipping: as soon as your order leaves our warehouse, you'll get a tracking email automatically. Questions? We're always reachable.
+
+<strong>You left that protection in your cart.</strong>
+
+Before your next ride, it's worth finishing the job.
+
+<span class="cta-btn">Return to Cart, Get 20% Off</span></div>
+        </div>
+      </div>
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 02</p><p class="email-block-title">Urgency and FAQ Reassurance</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject A</span><span class="email-meta-value">Still Thinking About Brake Free?</span>
+            <span class="email-meta-label">Subject B</span><span class="email-meta-value">Your $20 Off Ends Soon</span>
+            <span class="email-meta-label">Subject C</span><span class="email-meta-value">Make Sure Drivers See You Braking</span>
+            <span class="email-meta-label">Preview</span><span class="email-meta-value">More visibility when braking. Less risk on every ride.</span>
+          </div>
+          <div class="email-content">If you're still deciding, here's why Brake Free matters.
+
+Most motorcycle brake lights sit low and get lost in traffic.
+
+Brake Free is mounted high on your helmet, putting your brake signal directly in a driver's line of sight, so you're seen when you slow down, not after.
+
+Your <strong>$20 off expires in 24 hours.</strong>
+
+Two questions riders often ask before checking out:
+
+<strong>"How long will delivery take in the US?"</strong>
+Most orders are processed within 24 hours and delivered in 5-7 days with UPS Ground, or 2 days with UPS 2 Day Air. Your tracking number is emailed once your order ships.
+
+<strong>"Can I charge it on the go?"</strong>
+Yes, any USB power source works. We recommend charging off the bike, but you're a grown-up. Make your own decisions.
+
+Before your next ride, make sure drivers can see you braking.
+
+<span class="cta-btn">Secure Your Safety Gear Now</span></div>
+        </div>
+      </div>
+      <div class="email-block">
+        <div class="email-block-header" onclick="toggleEmail(this)">
+          <div><p class="email-block-num">Email 03</p><p class="email-block-title">Objection Handling and Return-to-Cart CTA</p></div>
+          <span class="email-block-toggle">+</span>
+        </div>
+        <div class="email-body">
+          <div class="email-meta-row">
+            <span class="email-meta-label">Subject A</span><span class="email-meta-value">Let's Answer Your Questions Before You Check Out</span>
+            <span class="email-meta-label">Subject B</span><span class="email-meta-value">A Few Quick Answers Before You Ride</span>
+            <span class="email-meta-label">Subject C</span><span class="email-meta-value">Still Have Questions? We've Got You Covered</span>
+            <span class="email-meta-label">Preview</span><span class="email-meta-value">Here's what riders often ask before completing their order.</span>
+          </div>
+          <div class="email-content">Before you complete your order, here are answers to a few common questions riders ask about Brake Free.
+
+<strong>How does Brake Free know when I'm braking?</strong>
+We use a combination of accelerometer and gyroscope sensors. Our patented algorithm determines with great accuracy any time you're slowing down, engine braking, downshifting, and regular brakes all trigger it.
+
+<strong>What type of helmet can I use?</strong>
+Brake Free works with most standard motorcycle helmets, including sizes XS to 4XL, matte and gloss finish, full face, 3/4 and half helmets. Race, street, touring, adventure, modular, we've fit-tested them all.
+
+<strong>What is your warranty policy?</strong>
+We offer a 1-year limited warranty to protect your purchase.
+
+You already added Brake Free to your cart.
+
+If visibility and protection matter on every ride, the next step is simple.
+
+<span class="cta-btn">Return to Your Cart</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="other-section" id="other-copy">
+  <div class="other-inner">
+    <div class="other-intro fade-in">
+      <p class="section-label">Beyond Email</p>
+      <h2 class="section-title">Part 02: Beyond Email</h2>
+      <p>Email is my core focus. But the same approach applies across formats: start with the reader, understand what moves them, write to that. Here are samples across landing pages, Facebook ads, and UGC scripts.</p>
+    </div>
+
+    <div class="other-grid fade-in">
+      <div class="other-card">
+        <p class="other-card-type">Landing Page</p>
+        <p class="other-card-title">Lead Magnet Landing Page</p>
+        <p class="other-card-brand">Tradie Coach</p>
+        <div class="other-card-strategy">
+          <strong>Strategy</strong>
+          Opens with a family pain point rather than a business problem, because that is what actually hurts. The free workbook is positioned as a low-commitment first step, not a fix, making it easy to say yes.
+        </div>
+      </div>
+      <div class="other-card">
+        <p class="other-card-type">Facebook Ads</p>
+        <p class="other-card-title">2 Ads, 2 Awareness Levels</p>
+        <p class="other-card-brand">Snow Slumber</p>
+        <div class="other-card-strategy">
+          <strong>Strategy</strong>
+          Ad 1 targets problem-aware readers: opens with the 3am moment, then reframes the cause. Ad 2 targets product-aware readers already shopping: skips the setup and goes straight to differentiation.
+        </div>
+      </div>
+      <div class="other-card">
+        <p class="other-card-type">UGC Scripts</p>
+        <p class="other-card-title">2 Scripts, 2 Angles</p>
+        <p class="other-card-brand">Pillow Cube</p>
+        <div class="other-card-strategy">
+          <strong>Strategy</strong>
+          Script 1 is told from a gift-giver perspective, which removes the "am I being sold to" feeling. Script 2 targets the side sleeper directly using a PASOP structure, going deeper into the downstream effects of poor sleep.
+        </div>
+      </div>
+      <div class="other-card">
+        <p class="other-card-type">Nurture Email</p>
+        <p class="other-card-title">Brand Nurture Email</p>
+        <p class="other-card-brand">Lumosity</p>
+        <div class="other-card-strategy">
+          <strong>Strategy</strong>
+          Opens with a relatable observation to name a feeling the reader already knows. Reframes the behaviour as natural, not a failing. Lumosity is introduced as the right kind of challenge, not a fix. No hard sell.
+        </div>
+      </div>
+    </div>
+
+    <!-- LANDING PAGE -->
+    <div class="other-sample fade-in" id="other-1">
+      <div class="other-sample-header">
+        <div>
+          <span class="sample-tag">Landing Page</span>
+          <h3 class="sample-title">Lead Magnet Landing Page</h3>
+          <p class="sample-brand">Tradie Coach</p>
+        </div>
+        <div class="sample-strategy">
+          <div class="strategy-item">
+            <strong>Brand &amp; Audience</strong>
+            Tradie Coach helps Australian tradespeople build businesses with more profit, time, and less stress. The audience are self-employed tradies who are financially surviving but personally burning out.
+          </div>
+          <div class="strategy-item">
+            <strong>Strategy</strong>
+            This is a lead magnet landing page. The goal is one action: get the tradie to enter their email and download the free Tradie Time Audit Workbook. The page opens with a family pain point rather than a business problem, because that is what actually hurts. By the time the reader reaches the email field, they have already felt understood, so submitting feels like a natural next move, not a transaction.
+          </div>
+        </div>
+      </div>
+      <div class="email-sequence">
+        <div class="email-block">
+          <div class="email-block-header" onclick="toggleEmail(this)">
+            <div><p class="email-block-num">Landing Page</p><p class="email-block-title">Tradie Time Audit Workbook</p></div>
+            <span class="email-block-toggle">+</span>
+          </div>
+          <div class="email-body">
+            <div class="email-content"><strong>Free PDF Workbook: Tradie Time Audit</strong>
+
+<strong>Your Kids Are Growing Up. And You're Missing It Because You Can't Get Off the Tools.</strong>
+
+You started this business so you could have more freedom. But right now it feels like the business owns you, not the other way around.
+
+<strong>Sound familiar?</strong>
+
+You told yourself it would be different.
+
+When you started your own business, you had this picture in your head. You'd be your own boss. You'd make good money. You'd have time to coach the kid's footy team, take the family on holidays, actually be there for dinner instead of rolling in at 8pm smelling like a job site.
+
+But that's not how it turned out, is it?
+
+You're out the door before the kids wake up. You get home and they're already in bed. Weekends disappear into catch-up jobs and paperwork you didn't finish during the week.
+
+You're the tradie. The boss. The admin person. The accountant. The marketing guy. The receptionist. You're wearing so many hats you've forgotten what your actual head looks like.
+
+And when you finally walk through the door at night? You're not done. There's quotes to send, invoices to chase, emails to answer. So you scoff down dinner and it's straight to the laptop until your eyes give up.
+
+Your partner's tired of hearing "things will slow down soon." Because they never do. The phone's always bloody buzzing. There's always another fire to put out.
+
+You're working harder than you've ever worked. You're stressed out of your eyeballs. But at the end of the month? The profit's nowhere to be found. Cash flow's a mess. And you've got nothing to show for it except a sore back and a family that's learned not to expect you home.
+
+You didn't start a business to become a stranger in your own house.
+
+But somewhere along the way, that's what happened.
+
+<strong>So why can't you fix it?</strong>
+
+You know something has to change. But then Monday comes and you're straight back into it. Same chaos. Same long hours.
+
+You can feel something eating your time. You just don't know what. All you know is the hours disappear and you can't explain where they go.
+
+You're stuck working IN the business instead of ON it. Caught in the rat race. Spinning your wheels. Drowning in work but going nowhere.
+
+And meanwhile, your daughter's learning to ride a bike. Your son's got his first girlfriend. Your partner's handling everything at home because you're never there.
+
+<strong>There's a way out. But it's not what you think.</strong>
+
+Working more won't fix this. You've tried that already.
+
+The tradies who actually have time for their families aren't working less. They just know exactly where their time goes and they protect it.
+
+Simple as that. When you can see it, you can protect it.
+
+But right now, you can't protect what you can't see.
+
+That's why the first step isn't a new app or some complicated system.
+
+The first step is simple: find out where your time is actually going.
+
+<strong>Here's something that can help.</strong>
+
+We've put together the Tradie Time Audit Workbook.
+
+It's a simple exercise that takes 7-14 days. No apps. No software. Just a PDF you print out, a pen, and paper.
+
+By the end, you'll know:
+
+Where your time actually goes, not where you think it goes, but the real numbers in black and white
+
+Which tasks make money and which ones just keep you busy, so you know what to protect and what to ditch
+
+What's draining you, the stuff you hate doing that someone else could handle
+
+The hidden "time leaks", those hours that disappear without you noticing
+
+<strong>This workbook won't magically fix everything. But it's where you start.</strong>
+
+Most tradies who do this are shocked by what they find. Hours they didn't know they were losing. Tasks that make no money but eat half their day.
+
+You can't fix what you can't see. This shows you what to fix.
+
+Download it. Print it. Track your week. See what shows up.
+
+[Email input: Your email address]
+
+<span class="cta-btn">Send Me the Workbook</span>
+
+No spam. Just practical stuff for tradies who want their time back.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FB ADS -->
+    <div class="other-sample fade-in" id="other-2">
+      <div class="other-sample-header">
+        <div>
+          <span class="sample-tag">Facebook Ads</span>
+          <h3 class="sample-title">2 Ads, 2 Awareness Levels</h3>
+          <p class="sample-brand">Snow Slumber</p>
+        </div>
+        <div class="sample-strategy">
+          <div class="strategy-item">
+            <strong>Brand &amp; Audience</strong>
+            Snow Slumber sells cooling mattresses in Singapore. The audience are adults who sleep hot, waking up drenched in sweat, exhausted, and frustrated after trying every fix.
+          </div>
+          <div class="strategy-item">
+            <strong>Strategy</strong>
+            Two ads, two awareness levels. Ad 1 targets problem-aware readers who know they sleep hot but haven't connected it to their mattress. It opens with the exact 3am moment they recognise, then reframes the cause. Ad 2 targets product-aware readers already shopping for cooling mattresses, skipping the problem setup and going straight to differentiation. Both close with risk reversal: 120-night trial, full refund, free pickup.
+          </div>
+        </div>
+      </div>
+      <div class="email-sequence">
+        <div class="email-block">
+          <div class="email-block-header" onclick="toggleEmail(this)">
+            <div><p class="email-block-num">Ad 01</p><p class="email-block-title">Problem-Aware Audience: Night Sweat Pain Point</p></div>
+            <span class="email-block-toggle">+</span>
+          </div>
+          <div class="email-body">
+            <div class="email-meta-row">
+              <span class="email-meta-label">Headline</span><span class="email-meta-value">Sleep 7°C Cooler. Not Satisfied, Money Back.</span>
+              <span class="email-meta-label">Description</span><span class="email-meta-value">120-Night Trial | 15-Year Warranty | Free Delivery</span>
+              <span class="email-meta-label">CTA</span><span class="email-meta-value">Shop Now</span>
+            </div>
+            <div class="email-content">Did you wake up last night drenched in sweat?
+
+You had the aircon blasting and the fan on max.
+
+But somehow you're still waking up at 3am <strong>soaked to the bone</strong>, nightclothes wet, sheets wet, tossing and turning trying to find a cool spot that doesn't exist.
+
+You know that feeling.
+
+Your mattress is <strong>cooking you</strong>.
+
+It's like sleeping on wet sand, or being wrapped in a plastic bag.
+
+And the worst part?
+
+You start getting <strong>anxiety before bed</strong> because you already know what's coming.
+
+Another rough night.
+
+Another morning where you drag yourself out of bed feeling more tired than when you went to sleep.
+
+You've tried the cooling gel toppers, the bamboo sheets, blasting aircon until your electricity bill hits $300.
+
+It works for maybe 30 minutes... then you're back to sweating.
+
+At some point you even thought something was wrong with you. Maybe a medical problem, hormones, stress, something.
+
+But it's not you. <strong>It's your mattress.</strong>
+
+Memory foam traps heat. That's just what it does. No topper or fancy sheet is going to fix that. You need a mattress that does the opposite.
+
+That's exactly what Snow Slumber was built for.
+
+It uses a 3-layer cooling system that keeps releasing heat all night, not just the first 30 minutes like gel foam.
+
+That's why you sleep up to <strong>7°C cooler</strong>. Actually cooler. Not marketing talk.
+
+<em>"This is the COLDEST mattress I have ever slept on." - Angie L.</em>
+
+Not sure? Sleep on it for <strong>120 nights</strong>. If you're still waking up hot, we'll pick it up free and give you a full refund.
+
+This week: Free bedsheet set + free delivery.
+
+See why 300,000+ Singaporeans made the switch</div>
+          </div>
+        </div>
+        <div class="email-block">
+          <div class="email-block-header" onclick="toggleEmail(this)">
+            <div><p class="email-block-num">Ad 02</p><p class="email-block-title">Product-Aware Audience: Comparison Angle</p></div>
+            <span class="email-block-toggle">+</span>
+          </div>
+          <div class="email-body">
+            <div class="email-meta-row">
+              <span class="email-meta-label">Headline</span><span class="email-meta-value">Sleep 7°C Cooler, Or Your Money Back</span>
+              <span class="email-meta-label">Description</span><span class="email-meta-value">3-Layer Cooling System | 120-Night Trial | 15-Year Warranty</span>
+              <span class="email-meta-label">CTA</span><span class="email-meta-value">Shop Now</span>
+            </div>
+            <div class="email-content">Shopping for a cooling mattress?
+
+Most "cooling" mattresses use gel foam. It feels cool when you first lie down, but that cooling effect fades after 30-40 minutes. Then you're back to the same problem, <strong>waking up at 3am drenched in sweat.</strong>
+
+Snow Slumber is different.
+
+It has a 3-layer cooling system that keeps you cool all night, not just the first 30 minutes.
+
+That's why you sleep up to <strong>7°C cooler</strong>. The entire night.
+
+<em>"This is the COLDEST mattress I have ever slept on. Comparable to mattresses that cost 5k and up." - Angie L.</em>
+
+<em>"If this was in ION Orchard, I would pay 4k for it." - Megan C.</em>
+
+Not sure? Sleep on it for <strong>120 nights</strong>. If you're still waking up hot, we'll pick it up free. Full refund.
+
+<strong>15-year warranty</strong>, the longest in Singapore.
+
+This week: <strong>Free bedsheet set</strong> (worth $199) + free delivery.
+
+313 reviews. 4.9 stars. Join 300,000+ Singaporeans sleeping cooler.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UGC SCRIPTS -->
+    <div class="other-sample fade-in" id="other-3">
+      <div class="other-sample-header">
+        <div>
+          <span class="sample-tag">UGC Scripts</span>
+          <h3 class="sample-title">2 Scripts, 2 Angles</h3>
+          <p class="sample-brand">Pillow Cube</p>
+        </div>
+        <div class="sample-strategy">
+          <div class="strategy-item">
+            <strong>Brand &amp; Audience</strong>
+            Pillow Cube makes cube-shaped pillows designed for side sleepers. The audience are people who wake up with chronic neck pain and stiffness, having tried everything with no results.
+          </div>
+          <div class="strategy-item">
+            <strong>Strategy</strong>
+            Script 1 is told from a gift-giver perspective. This angle removes the "am I being sold to" feeling because the viewer is watching someone else's experience, which makes the outcome more believable. Script 2 targets the side sleeper directly using a PASOP structure, going deeper into the downstream effects of poor sleep beyond just neck pain. Both close with a 60-night trial to remove purchase risk.
+          </div>
+        </div>
+      </div>
+      <div class="email-sequence">
+        <div class="email-block">
+          <div class="email-block-header" onclick="toggleEmail(this)">
+            <div><p class="email-block-num">Script 01</p><p class="email-block-title">Gift-Giver Angle</p></div>
+            <span class="email-block-toggle">+</span>
+          </div>
+          <div class="email-body">
+            <div class="email-content">So I got this pillow for my husband and now he's obsessed.
+
+He's always been a side sleeper. And every single morning he wakes up rubbing his neck. Groaning. Taking forever to get out of bed. Every morning I'm asking him, "Are you okay?" And every morning he's saying yeah my neck's just messed up again.
+
+This has been happening for years. He tried different pillows. Stacked them. Folded them. Nothing. He just thought that's how it is. You sleep, you wake up sore. That's life.
+
+So one day I saw this ad for Pillow Cube. It's shaped like a block. Looks kinda weird. But then I get it. When you sleep on your side there's a gap between your shoulder and head. Regular pillows squish down. Your neck bends. But this thing fills that gap so your neck stays straight.
+
+And I'm thinking... wait that actually makes sense. Why don't all pillows do this.
+
+So I ordered one without telling him. Just put it on the bed.
+
+That night he goes what is this. I go just try it.
+
+Next morning? He wakes up and just... gets up. No rubbing his neck. No groaning. He looks at me and goes I actually slept.
+
+It's been three weeks. He hasn't complained once. Not once. That never happens.
+
+So yeah if you got someone in your life who wakes up sore every day, get them this. Or get yourself one. 60 nights to try it.
+
+Link in bio.</div>
+          </div>
+        </div>
+        <div class="email-block">
+          <div class="email-block-header" onclick="toggleEmail(this)">
+            <div><p class="email-block-num">Script 02</p><p class="email-block-title">Side Sleeper Direct: PASOP Structure</p></div>
+            <span class="email-block-toggle">+</span>
+          </div>
+          <div class="email-body">
+            <div class="email-content">Can a pillow change your life? Sounds dramatic right. But for me? It actually did.
+
+So I'm a side sleeper. And every morning for years I'd wake up and my neck was so stiff I couldn't even turn my head. And then the pain would go down to my shoulder and I'd have headaches the whole day.
+
+But the thing is it wasn't just the pain. I was tired all the time. Couldn't focus at work. I was snapping at people for no reason. By afternoon I was just done. And I kept thinking maybe I'm getting old or maybe I'm just stressed or I need more sleep or something. I tried so many pillows. I stacked them, folded them, spent hundreds of dollars and nothing worked. So I just thought okay I guess this is my life now.
+
+Then one day I saw this thing called Pillow Cube. And it looks like a block. Looks weird right. But then I thought about it and it actually makes sense. When you sleep on your side there's this gap between your shoulder and your head. And regular pillows just go flat so your neck bends all night. That's why you wake up all messed up. But this thing fills that gap and keeps your neck straight.
+
+So I tried it. The first few nights felt kinda different. But by night three or four I slept the whole night. Woke up and there was no pain. No stiffness. I had energy again. I wasn't dragging myself through the day. I was actually nice to people. I could think. Two months now and I'm not going back.
+
+So if you're a side sleeper and you're waking up with neck pain or you're tired all the time and you don't know why, just try this first. It's one pillow. See if it helps. You have 60 nights to try it and if it doesn't work you can send it back and figure out something else. But for me this was it.
+
+Link in bio.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LUMOSITY EMAIL -->
+    <div class="other-sample fade-in" id="other-4">
+      <div class="other-sample-header">
+        <div>
+          <span class="sample-tag">Nurture Email</span>
+          <h3 class="sample-title">Brand Nurture Email</h3>
+          <p class="sample-brand">Lumosity</p>
+        </div>
+        <div class="sample-strategy">
+          <div class="strategy-item">
+            <strong>Brand &amp; Audience</strong>
+            Lumosity is a brain training app. The audience are adults who want to stay mentally sharp, not because of a diagnosed condition, but because they notice they're moving through the day on autopilot.
+          </div>
+          <div class="strategy-item">
+            <strong>Strategy</strong>
+            Opens with a relatable observation to name a feeling the reader already knows but hasn't thought about consciously. Reframes the behaviour as natural, not a personal failing, which keeps the tone educational rather than alarming. Lumosity is introduced as a gentle solution, not a fix. No aggressive CTA. The email earns attention first.
+          </div>
+        </div>
+      </div>
+      <div class="email-sequence">
+        <div class="email-block">
+          <div class="email-block-header" onclick="toggleEmail(this)">
+            <div><p class="email-block-num">Email</p><p class="email-block-title">Brand Nurture: Autopilot Observation</p></div>
+            <span class="email-block-toggle">+</span>
+          </div>
+          <div class="email-body">
+            <div class="email-meta-row">
+              <span class="email-meta-label">Subject A</span><span class="email-meta-value">You see it. But do you notice it?</span>
+              <span class="email-meta-label">Subject B</span><span class="email-meta-value">What your brain stops noticing</span>
+              <span class="email-meta-label">Subject C</span><span class="email-meta-value">A simple way to sharpen attention</span>
+              <span class="email-meta-label">Subject D</span><span class="email-meta-value">Build stronger focus in just a few minutes</span>
+            </div>
+            <div class="email-content">Have you ever looked at something familiar and missed a detail that was right in front of you?
+
+That happens more often than you think.
+
+Once something feels known, the brain stops checking it with the same care.
+
+It leans more on memory and habit, and less on fresh attention.
+
+That is how small but important details can slip past us.
+
+What is easy to miss is that this does not only happen with places, people, or routines. It can happen with the way we think too. We move through the day quickly, trust old patterns, and forget how much attention helps us notice more, stay sharper, and catch details we would usually miss.
+
+That is where Lumosity comes in. It gives the brain short, active challenges designed to engage attention, memory, and problem-solving.
+
+Sometimes the mind does not need more noise. It just needs the right kind of challenge.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="contact-section" id="contact">
+  <p class="contact-label">Get In Touch</p>
+  <h2 class="contact-title">Let's see if we're a good fit.</h2>
+  <p class="contact-sub">Open to freelance projects and agency collaborations.<br>Start with a small project. If it doesn't work for you,&nbsp;you&nbsp;don't&nbsp;pay.</p>
+  <a href="https://calendly.com/trangnguyen-cpw/30min" target="_blank" class="btn btn-light">Book a call</a>
+</div>
+
+<footer>
+  <p>© 2025 Trang Nguyen</p>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/trang-nguyen-b8735135/" target="_blank">LinkedIn</a>
+    <a href="mailto:trangnguyen.cpw@gmail.com">trangnguyen.cpw@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+function toggleEmail(header) {
+  const block = header.parentElement;
+  block.classList.toggle('open');
+}
+function switchTab(el, tab) {
+  document.querySelectorAll('.pain-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.pain-content').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
